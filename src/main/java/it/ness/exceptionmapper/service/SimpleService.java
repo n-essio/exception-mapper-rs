@@ -6,6 +6,7 @@ import javax.inject.Inject;
 
 import org.jboss.logging.Logger;
 
+import it.ness.exceptionmapper.logger.ServicesLogger;
 import it.ness.exceptionmapper.model.Prova;
 
 @ApplicationScoped
@@ -15,11 +16,14 @@ public class SimpleService {
     Logger logger;
 
     @Transactional
-    public void prova() {
+    public void prova() throws Exception {
         Prova prova = new Prova();
-        prova.name="flower";
-        prova.persist();
-        logger.info("ciao ciao: " + prova);
+        if (prova.uuid == null) {
+            ServicesLogger.LOGGER.loadingFrom("booh");
+        } else {
+            prova.name = "flower";
+            prova.persist();
+            logger.info("ciao ciao: " + prova);
+        }
     }
-    
 }

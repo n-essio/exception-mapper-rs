@@ -9,6 +9,7 @@ import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import it.ness.exceptionmapper.logger.ExceptionBundle;
 import it.ness.exceptionmapper.service.SimpleService;
 
 @ApplicationScoped
@@ -22,7 +23,7 @@ public class ProvaServiceRs {
 
     @Path("/single")
     @GET
-    public Response prova() {
+    public Response prova() throws Exception {
         simpleService.prova();
         return Response.ok("single").build();
     }
@@ -32,6 +33,12 @@ public class ProvaServiceRs {
     public Response nonso() {
         return Response.ok("nonso").build();
         
+    }
+
+    @Path("/exception1")
+    @GET
+    public Response exception1() throws Exception{
+       throw ExceptionBundle.EXCEPTIONS.configFileAccessError();        
     }
 }
 
