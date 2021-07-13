@@ -15,7 +15,7 @@ public class MyExceptionMapper implements ExceptionMapper<Throwable>{
 
     @Override
     public Response toResponse(Throwable exception) {
-        // TODO Auto-generated method stub
+        // TODO Auto-generated method stub bohgh
         logger.info(exception);
         return Response.serverError().build();
     }

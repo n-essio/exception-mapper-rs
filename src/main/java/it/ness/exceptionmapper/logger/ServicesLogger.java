@@ -10,7 +10,7 @@ import org.jboss.logging.annotations.MessageLogger;
 @MessageLogger(projectCode="FLW")
 public interface ServicesLogger extends BasicLogger {
     
-    ServicesLogger LOGGER = Logger.getMessageLogger(ServicesLogger.class, "it.ness.services");
+    ServicesLogger LOGGER = Logger.getMessageLogger(ServicesLogger.class, "it.ness.services ");
 
     @LogMessage(level = INFO)
     @Message(id=1, value="Loading config from %s")

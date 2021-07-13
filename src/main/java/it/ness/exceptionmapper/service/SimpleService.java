@@ -19,7 +19,7 @@ public class SimpleService {
     public void prova() throws Exception {
         Prova prova = new Prova();
         if (prova.uuid == null) {
-            ServicesLogger.LOGGER.loadingFrom("booh");
+            ServicesLogger.LOGGER.loadingFrom("booh non so");
         } else {
             prova.name = "flower";
             prova.persist();

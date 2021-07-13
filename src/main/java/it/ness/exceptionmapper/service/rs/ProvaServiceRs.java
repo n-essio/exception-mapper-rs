@@ -25,13 +25,13 @@ public class ProvaServiceRs {
     @GET
     public Response prova() throws Exception {
         simpleService.prova();
-        return Response.ok("single").build();
+        return Response.ok("single ok").build();
     }
 
     @Path("/nonso")
     @GET
     public Response nonso() {
-        return Response.ok("nonso").build();
+        return Response.ok("nonso ok").build();
         
     }
 

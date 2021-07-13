@@ -12,10 +12,10 @@ public interface ExceptionBundle {
 
     ExceptionBundle EXCEPTIONS = Messages.getBundle(ExceptionBundle.class);
 
-    @Message(id = 13231, value = "The config file could not be opened.")
+    @Message(id = 13231, value = "The config file could not be opened .")
     Exception configFileAccessError();
 
-    @Message(id = 13232, value = "Date string '%s' was invalid.")
+    @Message(id = 13232, value = "Date string '%s' was invalid .")
     ParseException dateWasInvalid(String dateString, @Param int errorOffset);
 
 }
